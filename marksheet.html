@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mark Sheet</title>
+    <link rel="stylesheet" href="marksheet.css">
+</head>
+<body>
+    <div class="marksheet">
+        <div class="header">
+            <div class="header-left">
+                <h1>अखिल भारतीय अग्नि प्रौद्योगिकी एवं सुरक्षा संस्थान विभाग</h1>
+                <h1>All India Institute of Fire Technology and Safety Management</h1>
+                <p>(Associated with Technical and Paramedical Education Council)</p>
+                <h2>Annual Statement of Marks</h2>
+            </div>
+            <div class="header-right">
+                <img src="path_to_logo.png" alt="Logo" class="logo">
+                <div class="qr-code">QR Code Here</div>
+            </div>
+        </div>
+        
+        <div class="student-info">
+            <table>
+                <tr>
+                    <td>Name of the Candidate:</td>
+                    <td><input type="text" id="candidateName"></td>
+                    <td>Course Name with Code:</td>
+                    <td>Diploma in Fire & Safety Management (DFS012)</td>
+                </tr>
+                <tr>
+                    <td>Reg. No.:</td>
+                    <td><input type="text" id="regNo"></td>
+                    <td>Enrollment No.:</td>
+                    <td><input type="text" id="enrollmentNo"></td>
+                </tr>
+                <tr>
+                    <td>Authorized Training Centre Name with Code:</td>
+                    <td colspan="3">(Authorized Training Centre's Name and Code)</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="marks-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Subject Code</th>
+                        <th>Subject Name</th>
+                        <th>Max. Marks</th>
+                        <th>Theory</th>
+                        <th>Practical</th>
+                        <th>Total</th>
+                        <th>In Words</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>DFS012-101</td>
+                        <td>Fire Science and Technology</td>
+                        <td>100</td>
+                        <td><input type="number" id="theory1" class="marks" oninput="calculateMarks()"></td>
+                        <td><input type="number" id="practical1" class="marks" oninput="calculateMarks()"></td>
+                        <td><span id="total1">0</span></td>
+                        <td><span id="words1">Zero Zero</span></td>
+                    </tr>
+                    <tr>
+                        <td>DFS012-102</td>
+                        <td>Fire Prevention and Investigation</td>
+                        <td>100</td>
+                        <td><input type="number" id="theory2" class="marks" oninput="calculateMarks()"></td>
+                        <td><input type="number" id="practical2" class="marks" oninput="calculateMarks()"></td>
+                        <td><span id="total2">0</span></td>
+                        <td><span id="words2">Zero Zero</span></td>
+                    </tr>
+                    <tr>
+                        <td>DFS012-103</td>
+                        <td>Fire Protection and Survey</td>
+                        <td>100</td>
+                        <td><input type="number" id="theory3" class="marks" oninput="calculateMarks()"></td>
+                        <td><input type="number" id="practical3" class="marks" oninput="calculateMarks()"></td>
+                        <td><span id="total3">0</span></td>
+                        <td><span id="words3">Zero Zero</span></td>
+                    </tr>
+                    <tr>
+                        <td>DFS012-104</td>
+                        <td>Fire Extinction and Control</td>
+                        <td>100</td>
+                        <td><input type="number" id="theory4" class="marks" oninput="calculateMarks()"></td>
+                        <td><input type="number" id="practical4" class="marks" oninput="calculateMarks()"></td>
+                        <td><span id="total4">0</span></td>
+                        <td><span id="words4">Zero Zero</span></td>
+                    </tr>
+                    <tr>
+                        <td>DFS012-105</td>
+                        <td>Industrial Safety Management</td>
+                        <td>100</td>
+                        <td><input type="number" id="theory5" class="marks" oninput="calculateMarks()"></td>
+                        <td><input type="number" id="practical5" class="marks" oninput="calculateMarks()"></td>
+                        <td><span id="total5">0</span></td>
+                        <td><span id="words5">Zero Zero</span></td>
+                    </tr>
+                    <tr>
+                        <td>DFS012-106</td>
+                        <td>Practical I</td>
+                        <td>100</td>
+                        <td><input type="number" id="theory6" class="marks" oninput="calculateMarks()"></td>
+                        <td><input type="number" id="practical6" class="marks" oninput="calculateMarks()"></td>
+                        <td><span id="total6">0</span></td>
+                        <td><span id="words6">Zero Zero</span></td>
+                    </tr>
+                    <tr>
+                        <td>DFS012-108</td>
+                        <td>Practical III</td>
+                        <td>100</td>
+                        <td><input type="number" id="theory7" class="marks" oninput="calculateMarks()"></td>
+                        <td><input type="number" id="practical7" class="marks" oninput="calculateMarks()"></td>
+                        <td><span id="total7">0</span></td>
+                        <td><span id="words7">Zero Zero</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="summary">
+            <table>
+                <tr>
+                    <td>Grand Total:</td>
+                    <td><span id="grandTotal">000</span></td>
+                    <td>Percentage:</td>
+                    <td><span id="percentage">00.00%</span></td>
+                    <td>Result:</td>
+                    <td><span id="result">PASS</span></td>
+                </tr>
+                <tr>
+                    <td>No. of Subjects Offered:</td>
+                    <td><span id="subjectsOffered">7</span></td>
+                    <td>Month and Year of Examination:</td>
+                    <td>May 2020</td>
+                </tr>
+                <tr>
+                    <td>Date:</td>
+                    <td><span id="date">[Date]</span></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="footer">
+            <p>Subject marked with * indicates Exemption</p>
+            <div class="signature">
+                <p>(Signature of Deputy Controller of Examination)</p>
+                <p>Deputy Controller of Examination</p>
+            </div>
+        </div>
+    </div>
+    <script src="marksheet.js"></script>
+</body>
+</html>
